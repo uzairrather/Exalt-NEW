@@ -1074,6 +1074,9 @@ import Partners from './components/Partners';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MERNPage from './pages/MERNPage';
+import OdooPage from './pages/OdooPage';
+import SalesforcePage from './pages/SalesforcePage';
+import DataAnalyticsPage from './pages/DataAnalyticsPage';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -1120,6 +1123,12 @@ const App = () => {
 
       {currentPage === 'mern' ? (
         <MERNPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+      ) : currentPage === 'odoo' ? (
+        <OdooPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+      ) : currentPage === 'salesforce' ? (
+        <SalesforcePage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+      ) : currentPage === 'analytics' ? (
+        <DataAnalyticsPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
       ) : (
         <>
           <Hero isDarkMode={isDarkMode} />

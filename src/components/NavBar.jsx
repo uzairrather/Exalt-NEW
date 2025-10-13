@@ -47,27 +47,30 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
                       <div className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Full-stack development</div>
                     </div>
                   </button>
-                  <a href="#odoo" className={`flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
+                  
+                  <button onClick={() => navigateToPage('odoo')} className={`w-full flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
                     <Database className="w-5 h-5 text-cyan-400" />
-                    <div>
+                    <div className="text-left">
                       <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-cyan-400' : 'text-gray-900 group-hover/item:text-cyan-600'} transition-colors`}>Odoo</div>
                       <div className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>ERP implementation</div>
                     </div>
-                  </a>
-                  <a href="#salesforce" className={`flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
-                    <Users className="w-5 h-5 text-cyan-400" />
-                    <div>
-                      <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-cyan-400' : 'text-gray-900 group-hover/item:text-cyan-600'} transition-colors`}>Salesforce</div>
+                  </button>
+                  
+                  <button onClick={() => navigateToPage('salesforce')} className={`w-full flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
+                    <Users className="w-5 h-5 text-indigo-400" />
+                    <div className="text-left">
+                      <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-indigo-400' : 'text-gray-900 group-hover/item:text-indigo-600'} transition-colors`}>Salesforce</div>
                       <div className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>CRM solutions</div>
                     </div>
-                  </a>
-                  <a href="#analytics" className={`flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
-                    <BarChart3 className="w-5 h-5 text-cyan-400" />
-                    <div>
-                      <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-cyan-400' : 'text-gray-900 group-hover/item:text-cyan-600'} transition-colors`}>Data Analytics</div>
+                  </button>
+                  
+                  <button onClick={() => navigateToPage('analytics')} className={`w-full flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
+                    <BarChart3 className="w-5 h-5 text-emerald-400" />
+                    <div className="text-left">
+                      <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-emerald-400' : 'text-gray-900 group-hover/item:text-emerald-600'} transition-colors`}>Data Analytics</div>
                       <div className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Business insights</div>
                     </div>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -108,9 +111,9 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
               {isServicesOpen && (
                 <div className="pl-4 mt-2 space-y-2">
                   <button onClick={() => { navigateToPage('mern'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-500 hover:text-cyan-600'} py-1`}>MERN Stack</button>
-                  <a href="#odoo" className={`block ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-500 hover:text-cyan-600'} py-1`} onClick={() => setIsMenuOpen(false)}>Odoo</a>
-                  <a href="#salesforce" className={`block ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-500 hover:text-cyan-600'} py-1`} onClick={() => setIsMenuOpen(false)}>Salesforce</a>
-                  <a href="#analytics" className={`block ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-500 hover:text-cyan-600'} py-1`} onClick={() => setIsMenuOpen(false)}>Data Analytics</a>
+                  <button onClick={() => { navigateToPage('odoo'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-500 hover:text-cyan-600'} py-1`}>Odoo</button>
+                  <button onClick={() => { navigateToPage('salesforce'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-indigo-400' : 'text-gray-500 hover:text-indigo-600'} py-1`}>Salesforce</button>
+                  <button onClick={() => { navigateToPage('analytics'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-emerald-400' : 'text-gray-500 hover:text-emerald-600'} py-1`}>Data Analytics</button>
                 </div>
               )}
             </div>
