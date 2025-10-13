@@ -10,7 +10,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
             <h1 className="text-5xl md:text-7xl font-bold">
               US Staffing &
               <br />
-              <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Recruitment Solutions
               </span>
             </h1>
@@ -27,7 +27,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div className={`p-8 ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200'} backdrop-blur-lg rounded-2xl border hover-lift`}>
               <h2 className="text-4xl font-bold mb-6">
-                US Staffing <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">Excellence</span>
+                US Staffing <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Excellence</span>
               </h2>
               <p className={`text-lg ${isDarkMode ? 'text-slate-300' : 'text-gray-700'} leading-relaxed mb-6`}>
                 At GoExalt System LLP, we deliver comprehensive US Staffing and Recruitment Solutions designed to help organizations across the United States find, hire, and retain exceptional talent.
@@ -39,14 +39,14 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
 
             <div className="grid grid-cols-2 gap-6">
               {[
-                { name: 'IT Staffing', icon: <Code className="w-12 h-12" />, color: 'from-orange-500 to-amber-600', desc: 'Tech Professionals' },
-                { name: 'ERP/CRM', icon: <Database className="w-12 h-12" />, color: 'from-amber-600 to-orange-800', desc: 'System Experts' },
-                { name: 'Healthcare', icon: <Heart className="w-12 h-12" />, color: 'from-orange-500 to-amber-500', desc: 'Medical Staff' },
-                { name: 'Executive', icon: <Briefcase className="w-12 h-12" />, color: 'from-yellow-600 to-orange-800', desc: 'Leadership Roles' }
+                { name: 'IT Staffing', icon: <Code className="w-12 h-12" />, color: 'from-cyan-400 to-blue-500', desc: 'Tech Professionals' },
+                { name: 'ERP/CRM', icon: <Database className="w-12 h-12" />, color: 'from-blue-400 to-indigo-500', desc: 'System Experts' },
+                { name: 'Healthcare', icon: <Heart className="w-12 h-12" />, color: 'from-purple-400 to-pink-400', desc: 'Medical Staff' },
+                { name: 'Executive', icon: <Briefcase className="w-12 h-12" />, color: 'from-indigo-400 to-purple-500', desc: 'Leadership Roles' }
               ].map((module, i) => (
                 <div
                   key={i}
-                  className={`p-6 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-orange-400' : 'bg-white border-gray-200 hover:border-orange-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift text-center`}
+                  className={`p-6 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-400' : 'bg-white border-gray-200 hover:border-cyan-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift text-center`}
                 >
                   <div className={`w-16 h-16 bg-gradient-to-br ${module.color} rounded-xl flex items-center justify-center text-white mb-4 mx-auto`}>
                     {module.icon}
@@ -65,7 +65,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our US Staffing <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">Expertise</span>
+              Our US Staffing <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Expertise</span>
             </h2>
             <p className={`text-xl ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               End-to-end recruitment services across multiple industries and skill sets
@@ -101,9 +101,9 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
             ].map((service, i) => (
               <div
                 key={i}
-                className={`p-8 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-orange-400' : 'bg-white border-gray-200 hover:bg-gradient-to-br hover:from-orange-50 hover:to-amber-50 hover:border-orange-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift`}
+                className={`p-8 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-400' : 'bg-white border-gray-200 hover:bg-gradient-to-br hover:from-cyan-50 hover:to-blue-50 hover:border-cyan-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift`}
               >
-                <div className={`w-16 h-16 ${isDarkMode ? 'bg-gradient-to-br from-orange-500/20 to-amber-400/20' : 'bg-gradient-to-br from-orange-500/10 to-amber-400/10'} rounded-xl flex items-center justify-center text-orange-400 mb-6`}>
+                <div className={`w-16 h-16 ${isDarkMode ? 'bg-gradient-to-br from-cyan-500/20 to-blue-500/20' : 'bg-gradient-to-br from-cyan-400/10 to-blue-400/10'} rounded-xl flex items-center justify-center text-cyan-500 mb-6`}>
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
@@ -111,7 +111,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
                 <div className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-400 to-amber-400"></div>
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400"></div>
                       <span className={`text-sm ${isDarkMode ? 'text-slate-300' : 'text-gray-700'}`}>{feature}</span>
                     </div>
                   ))}
@@ -127,7 +127,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Why Choose <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">GoExalt?</span>
+              Why Choose <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">GoExalt?</span>
             </h2>
             <p className={`text-xl ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               Your trusted partner in US staffing, IT recruitment, and workforce solutions
@@ -169,9 +169,9 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
             ].map((benefit, i) => (
               <div
                 key={i}
-                className={`p-8 ${isDarkMode ? 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700 hover:border-orange-400' : 'bg-white border-gray-200 hover:bg-gradient-to-br hover:from-orange-50 hover:to-amber-50 hover:border-orange-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift`}
+                className={`p-8 ${isDarkMode ? 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700 hover:border-cyan-400' : 'bg-white border-gray-200 hover:bg-gradient-to-br hover:from-cyan-50 hover:to-purple-50 hover:border-cyan-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift`}
               >
-                <div className={`w-16 h-16 ${isDarkMode ? 'bg-gradient-to-br from-orange-500/20 to-amber-400/20' : 'bg-gradient-to-br from-orange-500/10 to-amber-400/10'} rounded-xl flex items-center justify-center text-orange-400 mb-6`}>
+                <div className={`w-16 h-16 ${isDarkMode ? 'bg-gradient-to-br from-cyan-500/20 to-purple-500/20' : 'bg-gradient-to-br from-cyan-400/10 to-purple-400/10'} rounded-xl flex items-center justify-center text-cyan-500 mb-6`}>
                   {benefit.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
@@ -187,7 +187,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our Staffing <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">Solutions</span>
+              Our Staffing <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Solutions</span>
             </h2>
             <p className={`text-xl ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               Flexible hiring models to match your business requirements
@@ -229,9 +229,9 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
             ].map((solution, i) => (
               <div
                 key={i}
-                className={`p-8 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-orange-400' : 'bg-white border-gray-200 hover:border-orange-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift text-center`}
+                className={`p-8 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-400' : 'bg-white border-gray-200 hover:border-cyan-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift text-center`}
               >
-                <div className={`w-16 h-16 ${isDarkMode ? 'bg-gradient-to-br from-orange-500/20 to-amber-400/20' : 'bg-gradient-to-br from-orange-500/10 to-amber-400/10'} rounded-xl flex items-center justify-center text-orange-400 mb-6 mx-auto`}>
+                <div className={`w-16 h-16 ${isDarkMode ? 'bg-gradient-to-br from-cyan-500/20 to-blue-500/20' : 'bg-gradient-to-br from-cyan-400/10 to-blue-400/10'} rounded-xl flex items-center justify-center text-cyan-500 mb-6 mx-auto`}>
                   {solution.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4">{solution.title}</h3>
@@ -247,7 +247,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our Recruitment <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">Process</span>
+              Our Recruitment <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Process</span>
             </h2>
             <p className={`text-xl ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               A streamlined approach to finding the perfect talent match
@@ -263,9 +263,9 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
             ].map((process, i) => (
               <div
                 key={i}
-                className={`p-6 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-orange-400' : 'bg-white border-gray-200 hover:border-orange-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift text-center`}
+                className={`p-6 ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:border-cyan-400' : 'bg-white border-gray-200 hover:border-cyan-400 hover:shadow-xl'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer hover-lift text-center`}
               >
-                <div className="text-5xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent mb-4">
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
                   {process.step}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{process.title}</h3>
@@ -279,17 +279,17 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
       {/* CTA Section */}
       <section className="relative py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-orange-600 to-amber-500 rounded-3xl p-12 md:p-16 text-center">
+          <div className="bg-gradient-to-br from-cyan-500 to-blue-500 rounded-3xl p-12 md:p-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Ready to Build Your Dream Team?
             </h2>
-            <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
               Whether you're expanding your workforce, scaling your IT team, or seeking specialized professionals, GoExalt ensures you get the right talent at the right time.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button 
                 onClick={() => navigateToPage('home')}
-                className="px-8 py-4 bg-white text-orange-600 rounded-full font-bold hover:shadow-2xl transition-all flex items-center gap-2"
+                className="px-8 py-4 bg-white text-cyan-600 rounded-full font-bold hover:shadow-2xl transition-all flex items-center gap-2"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5" />
