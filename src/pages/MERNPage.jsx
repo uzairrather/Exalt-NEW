@@ -21,6 +21,86 @@ const MERNPage = ({ isDarkMode, navigateToPage }) => {
         </div>
       </section>
 
+      {/* MERN Showcase Section with Images */}
+      <section className="relative py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Full-Stack <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Development</span>
+            </h2>
+            <p className={`text-xl ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+              Modern web applications built with cutting-edge technology
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Image 1 - Code Development */}
+            <div className={`relative rounded-2xl overflow-hidden ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200'} border hover-lift cursor-pointer group`}>
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=500&fit=crop" 
+                  alt="MERN Development" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Full-Stack Development</h3>
+                  <p className="text-cyan-200">Modern JavaScript architecture</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image 2 - React UI */}
+            <div className={`relative rounded-2xl overflow-hidden ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200'} border hover-lift cursor-pointer group`}>
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=500&fit=crop" 
+                  alt="React Development" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 via-cyan-900/40 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-2xl font-bold mb-2">React Frontend</h3>
+                  <p className="text-blue-200">Dynamic user interfaces</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image 3 - Database */}
+            <div className={`relative rounded-2xl overflow-hidden ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200'} border hover-lift cursor-pointer group`}>
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=500&fit=crop" 
+                  alt="MongoDB Database" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-2xl font-bold mb-2">MongoDB Database</h3>
+                  <p className="text-cyan-200">Flexible data storage</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image 4 - API Development */}
+            <div className={`relative rounded-2xl overflow-hidden ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200'} border hover-lift cursor-pointer group`}>
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=500&fit=crop" 
+                  alt="API Development" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 via-cyan-900/40 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-2xl font-bold mb-2">RESTful APIs</h3>
+                  <p className="text-blue-200">Node.js & Express backend</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What is MERN Stack Section */}
       <section className="relative py-20">
         <div className="max-w-7xl mx-auto px-6">

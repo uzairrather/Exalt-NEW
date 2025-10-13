@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Sun, Moon, Code, Database, Users, BarChart3 } from 'lucide-react';
+import { Menu, X, Sun, Moon, Code, Database, Users, BarChart3, Briefcase, Brain } from 'lucide-react';
 
 const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
 
           <div className="hidden md:flex items-center space-x-8">
             <button onClick={() => navigateToPage('home')} className={`${isDarkMode ? 'text-slate-300  hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Home</button>
-            <a href="#about" className={`${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>About</a>
+            <button onClick={() => navigateToPage('about')} className={`${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>About</button>
             
             <div 
               className="relative group"
@@ -71,6 +71,22 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
                       <div className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Business insights</div>
                     </div>
                   </button>
+
+                  <button onClick={() => navigateToPage('ai')} className={`w-full flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
+                    <Brain className="w-5 h-5 text-cyan-400" />
+                    <div className="text-left">
+                      <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-cyan-400' : 'text-gray-900 group-hover/item:text-cyan-600'} transition-colors`}>AI & ML</div>
+                      <div className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Artificial intelligence</div>
+                    </div>
+                  </button>
+
+                  <button onClick={() => navigateToPage('staffing')} className={`w-full flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
+                    <Briefcase className="w-5 h-5 text-orange-400" />
+                    <div className="text-left">
+                      <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-orange-400' : 'text-gray-900 group-hover/item:text-orange-600'} transition-colors`}>US Staffing</div>
+                      <div className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-gray-500'}`}>Recruitment solutions</div>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -83,7 +99,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
               {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
             </button>
             
-            <a href="#contact" className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full hover:shadow-lg hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all">Contact Us</a>
+            <a href="#contact" className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full hover:shadow-lg hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all text-white">Contact Us</a>
           </div>
 
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
@@ -96,7 +112,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
         <div className={`md:hidden ${isDarkMode ? 'bg-slate-800/95' : 'bg-white/95'} backdrop-blur-lg`}>
           <div className="px-6 py-4 space-y-4">
             <button onClick={() => { navigateToPage('home'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'}`}>Home</button>
-            <a href="#about" className={`block ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'}`} onClick={() => setIsMenuOpen(false)}>About</a>
+            <button onClick={() => { navigateToPage('about'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'}`}>About</button>
             
             <div>
               <button 
@@ -114,6 +130,8 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
                   <button onClick={() => { navigateToPage('odoo'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-500 hover:text-cyan-600'} py-1`}>Odoo</button>
                   <button onClick={() => { navigateToPage('salesforce'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-indigo-400' : 'text-gray-500 hover:text-indigo-600'} py-1`}>Salesforce</button>
                   <button onClick={() => { navigateToPage('analytics'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-emerald-400' : 'text-gray-500 hover:text-emerald-600'} py-1`}>Data Analytics</button>
+                  <button onClick={() => { navigateToPage('ai'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-500 hover:text-cyan-600'} py-1`}>AI & ML</button>
+                  <button onClick={() => { navigateToPage('staffing'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-orange-400' : 'text-gray-500 hover:text-orange-600'} py-1`}>US Staffing</button>
                 </div>
               )}
             </div>

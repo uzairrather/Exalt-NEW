@@ -1077,6 +1077,9 @@ import MERNPage from './pages/MERNPage';
 import OdooPage from './pages/OdooPage';
 import SalesforcePage from './pages/SalesforcePage';
 import DataAnalyticsPage from './pages/DataAnalyticsPage';
+import USStaffingPage from './pages/USStaffingPage';
+import AIPage from './pages/AIPage';
+import AboutPage from './pages/AboutPage';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -1129,6 +1132,12 @@ const App = () => {
         <SalesforcePage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
       ) : currentPage === 'analytics' ? (
         <DataAnalyticsPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+      ) : currentPage === 'staffing' ? (
+        <USStaffingPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+      ) : currentPage === 'ai' ? (
+        <AIPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+      ) : currentPage === 'about' ? (
+        <AboutPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
       ) : (
         <>
           <Hero isDarkMode={isDarkMode} />

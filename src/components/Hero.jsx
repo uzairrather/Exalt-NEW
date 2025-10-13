@@ -29,7 +29,7 @@ const Hero = ({ isDarkMode }) => {
               </p>
             </div>
             <div className="flex gap-4">
-              <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2 group">
+              <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2 group text-white">
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
