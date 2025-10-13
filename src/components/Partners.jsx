@@ -1,11 +1,11 @@
 const Partners = ({ isDarkMode }) => {
   const brands = [
-    { name: 'TechCorp', logo: 'https://via.placeholder.com/150x60/1E40AF/FFFFFF?text=TechCorp' },
-    { name: 'DataFlow', logo: 'https://via.placeholder.com/150x60/7C3AED/FFFFFF?text=DataFlow' },
-    { name: 'CloudNine', logo: 'https://via.placeholder.com/150x60/059669/FFFFFF?text=CloudNine' },
-    { name: 'InnovateLab', logo: 'https://via.placeholder.com/150x60/DC2626/FFFFFF?text=InnovateLab' },
-    { name: 'FutureScale', logo: 'https://via.placeholder.com/150x60/4F46E5/FFFFFF?text=FutureScale' },
-    { name: 'SmartOps', logo: 'https://via.placeholder.com/150x60/0891B2/FFFFFF?text=SmartOps' },
+    { name: 'TechCorp', logo: '/images/ct-1.png' },
+    { name: 'DataFlow', logo: '/images/ct-2.png' },
+    { name: 'CloudNine', logo: '/images/ct-3.png' },
+    { name: 'InnovateLab', logo: '/images/ct-4.png' },
+    { name: 'FutureScale', logo: '/images/ct-5.png'},
+    { name: 'SmartOps', logo: '/images/ct-6.png' },
   ];
 
   return (
