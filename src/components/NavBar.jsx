@@ -31,17 +31,18 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => navigateToPage('home')}>
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg transform rotate-45 group-hover:rotate-[225deg] transition-transform duration-500"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xl font-bold text-white transform -rotate-45 group-hover:rotate-0 transition-transform duration-500">GO</span>
-                </div>
-              </div>
-              <div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">EXALT</span>
-                <span className={`text-2xl font-light ${isDarkMode ? 'text-slate-300' : 'text-gray-600'}`}>SYSTEM</span>
-              </div>
+            <div className="relative w-12 h-12">
+              <img 
+                src="/images/logo.png" 
+                alt="GO-EXALTSYSTEM Logo" 
+                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+              />
             </div>
+            <div>
+              <span className="text-2xl font-bold">GO-</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">EXALTSYSTEM</span>
+            </div>
+          </div>
 
             <div className="hidden md:flex items-center space-x-8">
               <button onClick={() => navigateToPage('home')} className={`${isDarkMode ? 'text-slate-300  hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Home</button>

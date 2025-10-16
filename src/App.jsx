@@ -1082,7 +1082,7 @@ import AIPage from './pages/AIPage';
 import AboutPage from './pages/AboutPage';
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [currentPage, setCurrentPage] = useState('home');
 
   const navigateToPage = (page) => {

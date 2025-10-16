@@ -6,16 +6,17 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg transform rotate-45"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-lg font-bold text-white transform -rotate-45">GO</span>
-                </div>
+            <div className="flex items-center space-x-3 mb-4 cursor-pointer" onClick={() => navigateToPage('home')}>
+              <div className="relative w-10 h-10">
+                <img 
+                  src="/images/logo.png" 
+                  alt="GO-EXALTSYSTEM Logo" 
+                  className="w-full h-full object-contain hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <div>
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">EXALT</span>
-                <span className={`text-xl font-light ${isDarkMode ? 'text-slate-300' : 'text-gray-600'}`}>SYSTEM</span>
+                <span className="text-xl font-bold">GO-</span>
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">EXALTSYSTEM</span>
               </div>
             </div>
             <p className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>
@@ -53,7 +54,7 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
         </div>
 
         <div className={`pt-8 ${isDarkMode ? 'border-slate-800' : 'border-gray-300'} border-t text-center ${isDarkMode ? 'text-slate-500' : 'text-gray-500'}`}>
-          © 2025 ExaltSystem. All Rights Reserved.
+          © 2025 GO-EXALTSYSTEM. All Rights Reserved.
         </div>
       </div>
     </footer>
