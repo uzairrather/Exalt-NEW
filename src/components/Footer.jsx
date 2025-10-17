@@ -6,8 +6,8 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4 cursor-pointer" onClick={() => navigateToPage('home')}>
-              <div className="relative w-10 h-10">
+            <div className="flex items-center cursor-pointer" onClick={() => navigateToPage('home')}>
+              <div className="relative w-10 h-10 pb-2">
                 <img 
                   src="/images/logo.png" 
                   alt="GO-EXALTSYSTEM Logo" 
@@ -15,8 +15,8 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
                 />
               </div>
               <div>
-                <span className="text-xl font-bold">GO-</span>
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">EXALTSYSTEM</span>
+                <span className="text-xl font-bold">GoExalt </span> 
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">System</span>
               </div>
             </div>
             <p className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>

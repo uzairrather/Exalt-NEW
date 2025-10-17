@@ -30,8 +30,8 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
       <nav className={`fixed top-0 left-0 right-0 w-full z-50 ${isDarkMode ? 'bg-slate-900/95 border-slate-700' : 'bg-white/95 border-gray-200'} backdrop-blur-lg border-b shadow-lg`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => navigateToPage('home')}>
-            <div className="relative w-12 h-12">
+            <div className="flex items-center  group cursor-pointer" onClick={() => navigateToPage('home')}>
+            <div className="relative w-12 h-12 pb-2">
               <img 
                 src="/images/logo.png" 
                 alt="GO-EXALTSYSTEM Logo" 
@@ -39,8 +39,8 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
               />
             </div>
             <div>
-              <span className="text-2xl font-bold">GO-</span>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">EXALTSYSTEM</span>
+              <span className="text-2xl font-bold">GoExalt </span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">System</span>
             </div>
           </div>
 
