@@ -15,8 +15,8 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
                 />
               </div>
               <div>
-                <span className="text-xl font-bold">GoExalt </span> 
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">System</span>
+                <span className="text-xl font-bold">GoExalt System</span> 
+                {/* <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"></span> */}
               </div>
             </div>
             <p className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>
@@ -43,7 +43,10 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
             <div className="space-y-3">
               <div className={`flex items-start gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>123 Tech Avenue, Innovation District, San Francisco, CA 94103</span>
+                <span>2624 Mckenzie Rd Ellicott City,
+                    Maryland, 21042
+                    info@exaltsystem.com
+                    +1 (667) 452-0819</span>
               </div>
               <a href="#" className={`flex items-center gap-3 ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>
                 <Linkedin className="w-5 h-5" />
@@ -54,7 +57,7 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
         </div>
 
         <div className={`pt-8 ${isDarkMode ? 'border-slate-800' : 'border-gray-300'} border-t text-center ${isDarkMode ? 'text-slate-500' : 'text-gray-500'}`}>
-          © 2025 GO-EXALTSYSTEM. All Rights Reserved.
+          © 2025 GoExalt System. All Rights Reserved.
         </div>
       </div>
     </footer>

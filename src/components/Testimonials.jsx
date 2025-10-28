@@ -28,7 +28,7 @@ const Testimonials = ({ isDarkMode }) => {
   ];
 
   return (
-    <section id="testimonials" className="relative py-20 z-10">
+    <section id="testimonials" className="relative py-5 z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

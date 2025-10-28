@@ -39,8 +39,8 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
               />
             </div>
             <div>
-              <span className="text-2xl font-bold">GoExalt </span>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">System</span>
+              <span className="text-2xl font-bold">GoExalt System </span>
+              {/* <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">System</span> */}
             </div>
           </div>
 

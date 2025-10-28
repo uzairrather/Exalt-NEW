@@ -3,7 +3,7 @@ const Partners = ({ isDarkMode }) => {
     { name: 'TechCorp', logo: '/images/ct-1.png' },
     { name: 'DataFlow', logo: '/images/ct-2.png' },
     { name: 'CloudNine', logo: '/images/ct-3.png' },
-    { name: 'InnovateLab', logo: '/images/ct-4.png' },
+    { name: 'InnovateLab', logo: '/images/Finnesse.png' },
     { name: 'FutureScale', logo: '/images/ct-5.png'},
     { name: 'SmartOps', logo: '/images/ct-6.png' },
   ];

@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { services } from '../data/services';
+import { useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
+import { services } from "../data/services";
 
-const Hero = ({ isDarkMode }) => {
+const Hero = ({ isDarkMode = false }) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -24,36 +24,54 @@ const Hero = ({ isDarkMode }) => {
                   With Cutting-Edge Solutions
                 </span>
               </h1>
-              <p className={`text-xl ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-                We build scalable software solutions using MERN Stack, Odoo, Salesforce, and advanced data analytics to transform your business vision into reality.
+              <p className={`text-xl ${isDarkMode ? "text-slate-400" : "text-gray-600"}`}>
+                We build scalable software solutions using MERN Stack, Odoo,
+                Salesforce, and advanced data analytics to transform your
+                business vision into reality.
               </p>
             </div>
-            <div className="flex gap-4">
-              <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2 group text-white">
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#contact"
+                aria-label="Get started - contact"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2 group text-white"
+              >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#services" className="px-8 py-4 border-2 border-cyan-400 rounded-full font-semibold hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white hover:border-transparent transition-all">
+
+              <a
+                href="#services"
+                aria-label="Our services"
+                className="px-8 py-4 border-2 border-cyan-400 rounded-full font-semibold hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white hover:border-transparent transition-all flex items-center justify-center"
+              >
                 Our Services
               </a>
             </div>
           </div>
 
           <div className="relative h-[600px] hidden md:block">
-            {services.map((service, i) => (
+            {services.slice(0, 4).map((service, i) => (
               <div
                 key={i}
-                className={`absolute w-72 p-6 ${isDarkMode ? 'bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700 hover:border-cyan-400' : 'bg-white border-gray-200 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/20'} backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer`}
+                className={`absolute w-72 p-6 ${
+                  isDarkMode
+                    ? "bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700 hover:border-cyan-400"
+                    : "bg-white border-gray-200 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/20"
+                } backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer`}
                 style={{
                   top: `${i * 120}px`,
-                  right: `${i % 2 === 0 ? '0' : '50px'}`,
-                  transform: `translateY(${scrollY * 0.05 * (i + 1)}px) rotateY(${i % 2 === 0 ? '5deg' : '-5deg'})`,
-                  transition: 'transform 0.3s ease-out'
+                  right: `${i % 2 === 0 ? "0" : "50px"}`,
+                  transform: `translateY(${scrollY * 0.05 * (i + 1)}px) rotateY(${i % 2 === 0 ? "5deg" : "-5deg"})`,
+                  transition: "transform 0.3s ease-out",
                 }}
               >
                 <div className="text-cyan-400 mb-3 ">{service.icon}</div>
                 <h3 className="text-lg font-bold mb-2">{service.title}</h3>
-                <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>Transform your business with our expertise</p>
+                <p className={`text-sm ${isDarkMode ? "text-slate-400" : "text-gray-600"}`}>
+                  Transform your business with our expertise
+                </p>
               </div>
             ))}
           </div>

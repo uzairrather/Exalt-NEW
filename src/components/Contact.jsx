@@ -2,7 +2,7 @@ import { Phone, Mail } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="relative py-20 z-10">
+    <section id="contact" className="relative py-2 z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-12 md:p-16">
           <div className="grid md:grid-cols-2 gap-12">
