@@ -31,11 +31,11 @@ const Hero = ({ isDarkMode = false }) => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col [@media(min-width:400px)]:flex-row gap-4">
               <a
                 href="#contact"
                 aria-label="Get started - contact"
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2 group text-white"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center justify-center  group text-white"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -47,6 +47,7 @@ const Hero = ({ isDarkMode = false }) => {
                 className="px-8 py-4 border-2 border-cyan-400 rounded-full font-semibold hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white hover:border-transparent transition-all flex items-center justify-center"
               >
                 Our Services
+                
               </a>
             </div>
           </div>
