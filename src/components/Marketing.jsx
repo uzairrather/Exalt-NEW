@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 
-const Marketing = ({ isDarkMode }) => {
+const Marketing = ({ isDarkMode, navigateToPage }) => {
   const services = [
     {
       title: "SEO Services",
@@ -53,10 +53,13 @@ const Marketing = ({ isDarkMode }) => {
         </div>
 
         <div className="text-center">
-          <a href="#services" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-500 hover:to-blue-600 transition-all">
+          <button
+            onClick={() => navigateToPage('digital-marketing')}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 hover:from-cyan-500 hover:to-blue-600 transition-all"
+          >
             View All Digital Marketing Services
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </button>
         </div>
       </div>
     </section>

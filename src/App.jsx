@@ -16,6 +16,7 @@ import DataAnalyticsPage from './pages/DataAnalyticsPage';
 import USStaffingPage from './pages/USStaffingPage';
 import AIPage from './pages/AIPage';
 import AboutPage from './pages/AboutPage';
+import DigitalMarketingPage from './pages/DigitalMarketingPage';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -74,13 +75,15 @@ const App = () => {
         <AIPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
       ) : currentPage === 'about' ? (
         <AboutPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+      ) : currentPage === 'digital-marketing' ? (
+        <DigitalMarketingPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
       ) : (
         <>
           <Hero isDarkMode={isDarkMode} />
           <ServicesSection isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
           <TechnologiesSection isDarkMode={isDarkMode} />
           <Testimonials isDarkMode={isDarkMode} />
-          <Marketing isDarkMode={isDarkMode} />
+          <Marketing isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
           <Partners isDarkMode={isDarkMode} />
           <Contact />
         </>
