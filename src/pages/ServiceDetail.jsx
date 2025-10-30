@@ -1,13 +1,9 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Mail, Phone } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Mail } from 'lucide-react';
 import { services } from '../data/services';
 import { useEffect } from 'react';
 
-interface ServiceDetailProps {
-  isDarkMode: boolean;
-}
-
-const ServiceDetail = ({ isDarkMode }: ServiceDetailProps) => {
+const ServiceDetail = ({ isDarkMode }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { slug } = useParams();
@@ -17,19 +13,9 @@ const ServiceDetail = ({ isDarkMode }: ServiceDetailProps) => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Define the Service type for better type safety
-  interface Service {
-    slug: string;
-    title: string;
-    description: string;
-    detailedDescription: string;
-    icon: React.ReactNode;
-    features: string[];
-  }
-
   // Get service from location state or find by slug
-  const service: Service | undefined = location.state?.service || 
-    services.find((s: Service) => s.slug === slug);
+  const service = location.state?.service || 
+    services.find((s) => s.slug === slug);
 
   if (!service) {
     return (
@@ -87,14 +73,14 @@ const ServiceDetail = ({ isDarkMode }: ServiceDetailProps) => {
               </p>
             </div>
           </div>
-            {service.features.map((feature: string, index: number) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className={isDarkMode ? 'text-slate-300' : 'text-gray-700'}>
-                  {feature}
-                </span>
-              </div>
-            ))}
+        </div>
+
+        {/* Features Section */}
+        <div className={`${
+          isDarkMode 
+            ? 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700' 
+            : 'bg-white border-gray-200 shadow-lg'
+        } rounded-2xl border p-8 mb-8`}>
           <h2 className="text-2xl font-bold mb-6">Key Features & Capabilities</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {service.features.map((feature, index) => (
@@ -117,7 +103,7 @@ const ServiceDetail = ({ isDarkMode }: ServiceDetailProps) => {
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
             <p className={`mb-6 ${isDarkMode ? 'text-slate-300' : 'text-gray-600'}`}>
-              Let's discuss how {service.title} can transform your business
+              Let&apos;s discuss how {service.title} can transform your business
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
