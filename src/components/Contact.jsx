@@ -22,7 +22,7 @@ const Contact = () => {
       [e.target.name]: e.target.value
     });
   };
-
+  
   const validateForm = () => {
     if (!formData.name.trim()) {
       setStatus({ loading: false, success: false, error: true, message: 'Please enter your name' });
@@ -115,6 +115,10 @@ const Contact = () => {
     }
   };
 
+  const handleEmailClick = () => {
+  window.location.href = 'mailto:info@exaltsystem.com';
+};
+
   return (
     <section id="contact" className="relative py-20 z-10">
       <div className="max-w-7xl mx-auto px-6">
@@ -142,14 +146,15 @@ const Contact = () => {
                   <span>+1 (667) 452-0819</span>
                 </a>
                 <a 
-                  href="mailto:info@exaltsystem.com" 
-                  className="flex items-center gap-4 text-lg text-white hover:translate-x-2 transition-transform"
-                >
-                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6" />
-                  </div>
-                  <span>info@exaltsystem.com</span>
-                </a>
+  href="mailto:info@exaltsystem.com"
+  onClick={handleEmailClick}
+  className="flex items-center gap-4 text-lg text-white hover:translate-x-2 transition-transform cursor-pointer"
+>
+  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+    <Mail className="w-6 h-6" />
+  </div>
+  <span>info@exaltsystem.com</span>
+</a>
               </div>
             </div>
 
