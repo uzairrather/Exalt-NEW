@@ -1,11 +1,10 @@
 const Partners = ({ isDarkMode }) => {
   const brands = [
-    { name: 'DataFlow', logo: '/images/logoBlanco.png' },
     { name: 'CloudNine', logo: '/images/Finnesse-1.png' },
     { name: 'InnovateLab', logo: '/images/Aptech.png' },
     { name: 'FutureScale', logo: '/images/KPK_LOGO.png'},
     { name: 'SmartOps', logo: '/images/hello-fresh.png' },
-    // { name: 'XETECHS', logo: '/images/xetechs.png' },
+    { name: 'XETECHS', logo: '/images/xetechs_logo.png' },
   ];
 
   return (
