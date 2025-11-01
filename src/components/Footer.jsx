@@ -58,7 +58,7 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
               </div>
               <div className={`flex items-center gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'} text-sm`}>
                 <Phone className="w-4 h-4 flex-shrink-0 text-cyan-400" />
-                <a href="tel:+16674520819" className="hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="tel:+16674520819"  className="hover:text-cyan-400 transition-colors whitespace-nowrap">
                   +1 (667) 452-0819
                 </a>
               </div>
