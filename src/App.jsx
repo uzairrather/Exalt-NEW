@@ -21,10 +21,18 @@ import DigitalMarketingPage from './pages/DigitalMarketingPage';
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [currentPage, setCurrentPage] = useState('home');
+  const [fadeOut, setFadeOut] = useState(false);
 
   const navigateToPage = (page) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (page === currentPage) return;
+    
+    setFadeOut(true);
+    
+    setTimeout(() => {
+      setCurrentPage(page);
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      setFadeOut(false);
+    }, 300);
   };
 
   return (
@@ -51,6 +59,37 @@ const App = () => {
           transform: translateY(-8px);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
+        
+        /* Smooth page transitions */
+        .page-content {
+          animation: fadeIn 400ms ease-out;
+        }
+        .page-content.fade-out {
+          animation: fadeOut 300ms ease-in;
+          opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+        }
       `}</style>
       
       <CanvasBG isDarkMode={isDarkMode} />
@@ -61,33 +100,35 @@ const App = () => {
         navigateToPage={navigateToPage}
       />
 
-      {currentPage === 'mern' ? (
-        <MERNPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : currentPage === 'odoo' ? (
-        <OdooPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : currentPage === 'salesforce' ? (
-        <SalesforcePage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : currentPage === 'analytics' ? (
-        <DataAnalyticsPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : currentPage === 'staffing' ? (
-        <USStaffingPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : currentPage === 'ai' ? (
-        <AIPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : currentPage === 'about' ? (
-        <AboutPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : currentPage === 'digital-marketing' ? (
-        <DigitalMarketingPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-      ) : (
-        <>
-          <Hero isDarkMode={isDarkMode} />
-          <ServicesSection isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-          <TechnologiesSection isDarkMode={isDarkMode} />
-          <Testimonials isDarkMode={isDarkMode} />
-          <Marketing isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
-          <Partners isDarkMode={isDarkMode} />
-          <Contact />
-        </>
-      )}
+      <div className={`page-content ${fadeOut ? 'fade-out' : ''}`}>
+        {currentPage === 'mern' ? (
+          <MERNPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : currentPage === 'odoo' ? (
+          <OdooPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : currentPage === 'salesforce' ? (
+          <SalesforcePage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : currentPage === 'analytics' ? (
+          <DataAnalyticsPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : currentPage === 'staffing' ? (
+          <USStaffingPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : currentPage === 'ai' ? (
+          <AIPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : currentPage === 'about' ? (
+          <AboutPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : currentPage === 'digital-marketing' ? (
+          <DigitalMarketingPage isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+        ) : (
+          <>
+            <Hero isDarkMode={isDarkMode} />
+            <ServicesSection isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+            <TechnologiesSection isDarkMode={isDarkMode} />
+            <Testimonials isDarkMode={isDarkMode} />
+            <Marketing isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
+            <Partners isDarkMode={isDarkMode} />
+            <Contact />
+          </>
+        )}
+      </div>
 
       <Footer isDarkMode={isDarkMode} navigateToPage={navigateToPage} />
     </div>

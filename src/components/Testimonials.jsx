@@ -1,13 +1,13 @@
 const Testimonials = ({ isDarkMode }) => {
   const testimonials = [
     {
-      quote: "ExaltSystem turned our digital presence around. From 0 to 5x leads in 90 days.",
+      quote: "ExaltSystem completely transformed our digital presence. Within just 90 days, we saw a remarkable 5x increase in qualified leads and a significant improvement in our brand visibility.",
       name: "Ibrahim",
       role: "Hello Fresh CEO",
       avatar: "IB"
     },
     {
-      quote: "They just get it. Fast, creative, and always on point.",
+      quote: "The ExaltSystem team immediately understood our vision. Their ability to deliver fast, creative, and precise results made the entire collaboration seamless and effective.",
       name: "Tim",
       role: "KPK",
       avatar: "TM"
