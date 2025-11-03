@@ -288,7 +288,7 @@ const USStaffingPage = ({ isDarkMode, navigateToPage }) => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button 
-                onClick={() => navigateToPage('home')}
+                onClick={() => navigateToPage('contact')}
                 className="px-8 py-4 bg-white text-cyan-600 rounded-full font-bold hover:shadow-2xl transition-all flex items-center gap-2"
               >
                 Get Started

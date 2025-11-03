@@ -19,21 +19,41 @@ import AboutPage from './pages/AboutPage';
 import DigitalMarketingPage from './pages/DigitalMarketingPage';
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [currentPage, setCurrentPage] = useState('home');
-  const [fadeOut, setFadeOut] = useState(false);
+ const [isDarkMode, setIsDarkMode] = useState(true);
+const [currentPage, setCurrentPage] = useState('home');
+const [fadeOut, setFadeOut] = useState(false);
 
-  const navigateToPage = (page) => {
-    if (page === currentPage) return;
-    
-    setFadeOut(true);
-    
-    setTimeout(() => {
-      setCurrentPage(page);
-      window.scrollTo({ top: 0, behavior: 'instant' });
-      setFadeOut(false);
-    }, 300);
-  };
+const navigateToPage = (page) => {
+  // Special handling for contact
+  if (page === 'contact') {
+    if (currentPage !== 'home') {
+      // Navigate to home first, then scroll to contact
+      setFadeOut(true);
+      setTimeout(() => {
+        setCurrentPage('home');
+        setFadeOut(false);
+        setTimeout(() => {
+          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }, 300);
+    } else {
+      // Already on home, just scroll to contact
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }
+    return;
+  }
+
+  // Regular page navigation
+  if (page === currentPage) return;
+  
+  setFadeOut(true);
+  
+  setTimeout(() => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setFadeOut(false);
+  }, 300);
+};
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-slate-900 text-white' : 'bg-white text-gray-900'} relative overflow-hidden`}>

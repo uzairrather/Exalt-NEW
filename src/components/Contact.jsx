@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Phone, Mail, Send, CheckCircle, AlertCircle, Copy, Check } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -16,11 +16,19 @@ const Contact = () => {
     message: ''
   });
 
+  const [emailCopied, setEmailCopied] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('info@exaltsystem.com');
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
   };
   
   const validateForm = () => {
@@ -115,10 +123,6 @@ const Contact = () => {
     }
   };
 
-  const handleEmailClick = () => {
-  window.location.href = 'mailto:info@exaltsystem.com';
-};
-
   return (
     <section id="contact" className="relative py-20 z-10">
       <div className="max-w-7xl mx-auto px-6">
@@ -145,16 +149,30 @@ const Contact = () => {
                   </div>
                   <span>+1 (667) 452-0819</span>
                 </a>
-                <a 
-  href="mailto:info@exaltsystem.com"
-  onClick={handleEmailClick}
-  className="flex items-center gap-4 text-lg text-white hover:translate-x-2 transition-transform cursor-pointer"
->
-  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-    <Mail className="w-6 h-6" />
-  </div>
-  <span>info@exaltsystem.com</span>
-</a>
+                
+                <div className="flex items-center gap-4">
+                  <a 
+                    href="mailto:info@exaltsystem.com"
+                    className="flex items-center gap-4 text-lg text-white hover:translate-x-2 transition-transform flex-1"
+                  >
+                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                      <Mail className="w-6 h-6" />
+                    </div>
+                    <span>info@exaltsystem.com</span>
+                  </a>
+                  
+                  <button
+                    onClick={copyEmail}
+                    className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all flex-shrink-0"
+                    title="Copy email address"
+                  >
+                    {emailCopied ? (
+                      <Check className="w-5 h-5 text-green-300" />
+                    ) : (
+                      <Copy className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
 
