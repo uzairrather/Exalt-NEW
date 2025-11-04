@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CanvasBG from './components/CanvasBG';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
@@ -19,41 +19,83 @@ import AboutPage from './pages/AboutPage';
 import DigitalMarketingPage from './pages/DigitalMarketingPage';
 
 const App = () => {
- const [isDarkMode, setIsDarkMode] = useState(true);
-const [currentPage, setCurrentPage] = useState('home');
-const [fadeOut, setFadeOut] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [currentPage, setCurrentPage] = useState('home');
+  const [fadeOut, setFadeOut] = useState(false);
+  const [scrollToContact, setScrollToContact] = useState(false);
 
-const navigateToPage = (page) => {
-  // Special handling for contact
-  if (page === 'contact') {
-    if (currentPage !== 'home') {
-      // Navigate to home first, then scroll to contact
-      setFadeOut(true);
+  // Handle initial hash and hash changes (browser back/forward)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1); // Remove '#' from hash
+      if (hash) {
+        if (hash === 'contact') {
+          // For contact, we need to check current page at this moment
+          const isOnHomePage = currentPage === 'home';
+          if (!isOnHomePage) {
+            setScrollToContact(true);
+            setFadeOut(true);
+            setTimeout(() => {
+              setCurrentPage('home');
+              setFadeOut(false);
+            }, 300);
+          } else {
+            setTimeout(() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+          }
+        } else {
+          // Regular page navigation
+          if (hash !== currentPage) {
+            setFadeOut(true);
+            setTimeout(() => {
+              setCurrentPage(hash);
+              window.scrollTo({ top: 0, behavior: 'instant' });
+              setFadeOut(false);
+            }, 300);
+          }
+        }
+      } else {
+        if (currentPage !== 'home') {
+          setFadeOut(true);
+          setTimeout(() => {
+            setCurrentPage('home');
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            setFadeOut(false);
+          }, 300);
+        }
+      }
+    };
+
+    // Check hash on initial load
+    handleHashChange();
+
+    // Listen for hash changes (back/forward browser buttons)
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [currentPage]); // Add currentPage as dependency
+
+  // Handle scroll to contact after page change
+  useEffect(() => {
+    if (scrollToContact && currentPage === 'home' && !fadeOut) {
       setTimeout(() => {
-        setCurrentPage('home');
-        setFadeOut(false);
-        setTimeout(() => {
-          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }, 300);
-    } else {
-      // Already on home, just scroll to contact
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        setScrollToContact(false);
+      }, 100);
     }
-    return;
-  }
+  }, [currentPage, scrollToContact, fadeOut]);
 
-  // Regular page navigation
-  if (page === currentPage) return;
-  
-  setFadeOut(true);
-  
-  setTimeout(() => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    setFadeOut(false);
-  }, 300);
-};
+  const navigateToPage = (page) => {
+    // Update URL hash
+    window.location.hash = page;
+    // The hashchange event will handle the actual navigation
+  };
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-slate-900 text-white' : 'bg-white text-gray-900'} relative overflow-hidden`}>

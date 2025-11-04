@@ -62,7 +62,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
                 
                 <div className={`absolute top-full left-0 mt-2 w-64 ${isDarkMode ? 'bg-slate-800/95 border-slate-700' : 'bg-white/95 border-gray-200'} backdrop-blur-lg rounded-xl border shadow-2xl overflow-hidden transition-all duration-300 ${isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                   <div className="p-2 max-h-[280px] overflow-y-auto services-dropdown-scroll" style={scrollbarStyles}>
-                    <button onClick={() => navigateToPage('mern')} className={`w-full flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item`}>
+                    <button onClick={() => navigateToPage('mern')} className={`w-full flex items-center gap-3 p-3 rounded-lg ${isDarkMode ? 'hover:bg-slate-700/50' : 'hover:bg-gray-100'} transition-colors group/item `}>
                       <Code className="w-5 h-5 text-cyan-400" />
                       <div className="text-left">
                         <div className={`font-semibold ${isDarkMode ? 'text-white group-hover/item:text-cyan-400' : 'text-gray-900 group-hover/item:text-cyan-600'} transition-colors`}>MERN Stack</div>
