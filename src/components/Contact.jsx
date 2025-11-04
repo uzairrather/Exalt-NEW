@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('info@exaltsystem.com');
+    navigator.clipboard.writeText('sales@exaltsystem.com');
     setEmailCopied(true);
     setTimeout(() => setEmailCopied(false), 2000);
   };
@@ -124,67 +124,72 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-20 z-10">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-12 md:p-16">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
+    <section id="contact" className="relative py-12 sm:py-16 md:py-20 z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {/* Left Side - Contact Info */}
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 Get In Touch With Us,
                 <br />
                 <span className="bg-gradient-to-r from-white/90 to-cyan-200 bg-clip-text text-transparent">
                   We Answer You
                 </span>
               </h2>
-              <p className="text-xl text-blue-100">
+              <p className="text-base sm:text-lg md:text-xl text-blue-100">
                 Ready to transform your business with cutting-edge technology solutions? Let&apos;s discuss how we can help you succeed.
               </p>
-              <div className="space-y-4 pt-8">
+              
+              <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-8">
+                {/* Phone */}
                 <a 
                   href="tel:+16674520819" 
-                  className="flex items-center gap-4 text-lg text-white hover:translate-x-2 transition-transform"
+                  className="flex items-center gap-3 sm:gap-4 text-base sm:text-lg text-white hover:translate-x-2 transition-transform"
                 >
-                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <span>+1 (667) 452-0819</span>
+                  <span className="break-all">+1 (667) 452-0819</span>
                 </a>
                 
-                <div className="flex items-center gap-4">
+                {/* Email with Copy Button */}
+                <div className="flex items-center gap-2 sm:gap-3">
                   <a 
-                    href="mailto:info@exaltsystem.com"
-                    className="flex items-center gap-4 text-lg text-white hover:translate-x-2 transition-transform flex-1"
+                    href="mailto:sales@exaltsystem.com"
+                    className="flex items-center gap-3 sm:gap-4 text-base sm:text-lg text-white hover:translate-x-2 transition-transform flex-1 min-w-0"
                   >
-                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                      <Mail className="w-6 h-6" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <span>info@exaltsystem.com</span>
+                    <span className="break-all">sales@exaltsystem.com</span>
                   </a>
                   
                   <button
                     onClick={copyEmail}
-                    className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all flex-shrink-0"
+                    className="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all flex-shrink-0"
                     title="Copy email address"
                   >
                     {emailCopied ? (
-                      <Check className="w-5 h-5 text-green-300" />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-300" />
                     ) : (
-                      <Copy className="w-5 h-5" />
+                      <Copy className="w-4 h-4 sm:w-5 sm:h-5" />
                     )}
                   </button>
                 </div>
               </div>
             </div>
 
+            {/* Right Side - Contact Form */}
             <div>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className="w-full p-4 rounded-xl bg-white/20 backdrop-blur-lg border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+                  className="w-full p-3 sm:p-4 rounded-xl bg-white/20 backdrop-blur-lg border border-white/30 placeholder-white/70 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
                   disabled={status.loading}
                 />
                 <input
@@ -193,7 +198,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  className="w-full p-4 rounded-xl bg-white/20 backdrop-blur-lg border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+                  className="w-full p-3 sm:p-4 rounded-xl bg-white/20 backdrop-blur-lg border border-white/30 placeholder-white/70 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
                   disabled={status.loading}
                 />
                 <textarea
@@ -202,14 +207,14 @@ const Contact = () => {
                   onChange={handleChange}
                   rows="5"
                   placeholder="Type Your Message Here..."
-                  className="w-full p-4 rounded-xl bg-white/20 backdrop-blur-lg border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50 resize-none transition-all"
+                  className="w-full p-3 sm:p-4 rounded-xl bg-white/20 backdrop-blur-lg border border-white/30 placeholder-white/70 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white/50 resize-none transition-all"
                   disabled={status.loading}
                 ></textarea>
                 
                 <button 
                   type="submit"
                   disabled={status.loading}
-                  className={`w-full py-4 bg-white text-blue-600 rounded-xl font-bold transition-all hover:shadow-2xl flex items-center justify-center gap-2 ${
+                  className={`w-full py-3 sm:py-4 bg-white text-blue-600 rounded-xl font-bold text-sm sm:text-base transition-all hover:shadow-2xl flex items-center justify-center gap-2 ${
                     status.loading 
                       ? 'opacity-70 cursor-not-allowed' 
                       : 'hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white'
@@ -217,28 +222,28 @@ const Contact = () => {
                 >
                   {status.loading ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
                       Sending...
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5" />
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                       Get Started
                     </>
                   )}
                 </button>
 
                 {status.success && (
-                  <div className="flex items-center gap-3 p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-white backdrop-blur-lg">
+                  <div className="flex items-center gap-3 p-3 sm:p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-white backdrop-blur-lg">
                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                    <p className="text-sm">{status.message}</p>
+                    <p className="text-xs sm:text-sm">{status.message}</p>
                   </div>
                 )}
 
                 {status.error && (
-                  <div className="flex items-start gap-3 p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-white backdrop-blur-lg">
+                  <div className="flex items-start gap-3 p-3 sm:p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-white backdrop-blur-lg">
                     <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm">{status.message}</p>
+                    <p className="text-xs sm:text-sm">{status.message}</p>
                   </div>
                 )}
               </form>

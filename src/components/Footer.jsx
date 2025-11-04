@@ -30,10 +30,40 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Sitemap</span>
             </h3>
             <div className="space-y-2">
-              <button onClick={() => navigateToPage('home')} className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Home</button>
-              <a href="#services" className={`block ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Services</a>
-              <a href="#technologies" className={`block ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Technologies</a>
-              <a href="#contact" className={`block ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Contact</a>
+              <button 
+                onClick={() => navigateToPage('home')} 
+                className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => {
+                  navigateToPage('home');
+                  setTimeout(() => {
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
+                }} 
+                className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => {
+                  navigateToPage('home');
+                  setTimeout(() => {
+                    document.getElementById('technologies')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
+                }} 
+                className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
+              >
+                Technologies
+              </button>
+              <button 
+                onClick={() => navigateToPage('contact')} 
+                className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
+              >
+                Contact
+              </button>
             </div>
           </div>
 
@@ -52,13 +82,13 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
               </div>
               <div className={`flex items-center gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'} text-sm`}>
                 <Mail className="w-4 h-4 flex-shrink-0 text-cyan-400" />
-                <a href="mailto:info@exaltsystem.com" className="hover:text-cyan-400 transition-colors">
-                  info@exaltsystem.com
+                <a href="mailto:sales@exaltsystem.com" className="hover:text-cyan-400 transition-colors break-all">
+                  sales@exaltsystem.com
                 </a>
               </div>
               <div className={`flex items-center gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'} text-sm`}>
                 <Phone className="w-4 h-4 flex-shrink-0 text-cyan-400" />
-                <a href="tel:+16674520819"  className="hover:text-cyan-400 transition-colors whitespace-nowrap">
+                <a href="tel:+16674520819" className="hover:text-cyan-400 transition-colors whitespace-nowrap">
                   +1 (667) 452-0819
                 </a>
               </div>
@@ -75,12 +105,12 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-cyan-400" />
                 <div>
                   <p className="font-semibold mb-1">Kashmir, India</p>
-                  <p>Office No. 136 & 137, First Floor,  Arish Complex, Model Town-D, 193201</p>
+                  <p>Office No. 136 & 137, First Floor, Arish Complex, Model Town-D, 193201</p>
                 </div>
               </div>
               <div className={`flex items-center gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'} text-sm`}>
                 <Mail className="w-4 h-4 flex-shrink-0 text-cyan-400" />
-                <a href="mailto:sales@exaltsystem.com" className="hover:text-cyan-400 transition-colors">
+                <a href="mailto:sales@exaltsystem.com" className="hover:text-cyan-400 transition-colors break-all">
                   sales@exaltsystem.com
                 </a>
               </div>
@@ -97,7 +127,7 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
         {/* Social Links & Copyright */}
         <div className={`pt-8 ${isDarkMode ? 'border-slate-800' : 'border-gray-300'} border-t`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className={`${isDarkMode ? 'text-slate-500' : 'text-gray-500'} text-sm`}>
+            <div className={`${isDarkMode ? 'text-slate-500' : 'text-gray-500'} text-sm text-center md:text-left`}>
               © 2025 GoExalt System. All Rights Reserved.
             </div>
             <a 
