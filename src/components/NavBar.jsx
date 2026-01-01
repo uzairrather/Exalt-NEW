@@ -114,13 +114,13 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
               </div>
               
               {/* Dark/Light Mode Toggle - Desktop */}
-              {/* <button 
+              <button 
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className={`p-2 rounded-lg ${isDarkMode ? 'bg-slate-800 hover:bg-slate-700' : 'bg-gray-200 hover:bg-gray-300'} transition-all`}
                 aria-label="Toggle theme"
               >
                 {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
-              </button> */}
+              </button>
               
               <a href="#contact" className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full hover:shadow-lg hover:shadow-cyan-500/50 hover:from-cyan-400 hover:to-blue-500 transition-all text-white">Contact Us</a>
             </div>
@@ -162,7 +162,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
               <a href="#contact" className={`block ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'}`} onClick={() => setIsMenuOpen(false)}>Contact</a>
               
               {/* Dark/Light Mode Toggle - Mobile */}
-              {/* <button 
+              <button 
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className={`w-full flex items-center gap-2 p-3 rounded-lg ${isDarkMode ? 'bg-slate-700/50 hover:bg-slate-700' : 'bg-gray-200 hover:bg-gray-300'} transition-all`}
               >
@@ -177,7 +177,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
                     <span>Dark Mode</span>
                   </>
                 )}
-              </button> */}
+              </button>
             </div>
           </div>
         )}
