@@ -38,11 +38,11 @@ const App = () => {
             setTimeout(() => {
               setCurrentPage('home');
               setFadeOut(false);
-            }, 300);
+            }, 400);
           } else {
             setTimeout(() => {
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
+            }, 200);
           }
         } else {
           // Regular page navigation
@@ -52,7 +52,7 @@ const App = () => {
               setCurrentPage(hash);
               window.scrollTo({ top: 0, behavior: 'instant' });
               setFadeOut(false);
-            }, 300);
+            }, 400);
           }
         }
       } else {
@@ -62,7 +62,7 @@ const App = () => {
             setCurrentPage('home');
             window.scrollTo({ top: 0, behavior: 'instant' });
             setFadeOut(false);
-          }, 300);
+          }, 400);
         }
       }
     };
@@ -87,7 +87,7 @@ const App = () => {
           contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         setScrollToContact(false);
-      }, 100);
+      }, 200);
     }
   }, [currentPage, scrollToContact, fadeOut]);
 
@@ -98,7 +98,7 @@ const App = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-slate-900 text-white' : 'bg-white text-gray-900'} relative overflow-hidden`}>
+    <div className={`min-h-screen ${isDarkMode ? 'bg-slate-900 text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden`}>
       <style>{`
         @keyframes scroll {
           0% {

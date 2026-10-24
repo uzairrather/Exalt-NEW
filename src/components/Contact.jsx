@@ -150,7 +150,7 @@ const Contact = () => {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <span className="break-all">+1 (667) 452-0819</span>
+                  <span className="break-all">+91-8899889056</span>
                 </a>
                 
                 {/* Email with Copy Button */}

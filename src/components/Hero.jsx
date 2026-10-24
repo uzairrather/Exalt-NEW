@@ -59,7 +59,7 @@ const Hero = ({ isDarkMode = false }) => {
                 className={`absolute w-72 p-6 ${
                   isDarkMode
                     ? "bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700 hover:border-cyan-400"
-                    : "bg-white border-gray-200 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/20"
+                    : "bg-gray-200/85 border-gray-200 hover:bg-cyan-50 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/20"
                 } backdrop-blur-lg rounded-2xl border transition-all hover:scale-105 cursor-pointer`}
                 style={{
                   top: `${i * 120}px`,

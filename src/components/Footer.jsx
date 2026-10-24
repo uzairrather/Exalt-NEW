@@ -9,9 +9,9 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
           <div>
             <div className="flex items-center cursor-pointer mb-4" onClick={() => navigateToPage('home')}>
               <div className="relative w-10 h-10 pb-2">
-                <img 
-                  src="/images/logo.png" 
-                  alt="GO-EXALTSYSTEM Logo" 
+                <img
+                  src="/images/logo.png"
+                  alt="GO-EXALTSYSTEM Logo"
                   className="w-full h-full object-contain hover:scale-110 transition-transform duration-300"
                 />
               </div>
@@ -30,36 +30,36 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Sitemap</span>
             </h3>
             <div className="space-y-2">
-              <button 
-                onClick={() => navigateToPage('home')} 
+              <button
+                onClick={() => navigateToPage('home')}
                 className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
               >
                 Home
               </button>
-              <button 
+              <button
                 onClick={() => {
                   navigateToPage('home');
                   setTimeout(() => {
                     document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }, 100);
-                }} 
+                }}
                 className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
               >
                 Services
               </button>
-              <button 
+              <button
                 onClick={() => {
                   navigateToPage('home');
                   setTimeout(() => {
                     document.getElementById('technologies')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }, 100);
-                }} 
+                }}
                 className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
               >
                 Technologies
               </button>
-              <button 
-                onClick={() => navigateToPage('contact')} 
+              <button
+                onClick={() => navigateToPage('contact')}
                 className={`block w-full text-left ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
               >
                 Contact
@@ -67,7 +67,7 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
             </div>
           </div>
 
-          {/* Head Office - Maryland */}
+          {/* Head Office - Philadelphia */}
           <div>
             <h3 className="text-xl font-bold mb-4">
               Head <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Office</span>
@@ -76,8 +76,8 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
               <div className={`flex items-start gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'} text-sm`}>
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-cyan-400" />
                 <div>
-                  <p className="font-semibold mb-1">Maryland, USA</p>
-                  <p>2624 Mckenzie Rd Ellicott City, Maryland, 21042</p>
+                  <p className="font-semibold mb-1">Philadelphia, USA</p>
+                  <p>4418 Spruce Street, G2, Philadelphia, Pennsylvania, 19104</p>
                 </div>
               </div>
               <div className={`flex items-center gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'} text-sm`}>
@@ -88,8 +88,8 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
               </div>
               <div className={`flex items-center gap-3 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'} text-sm`}>
                 <Phone className="w-4 h-4 flex-shrink-0 text-cyan-400" />
-                <a href="tel:+16674520819" className="hover:text-cyan-400 transition-colors whitespace-nowrap">
-                  +1 (667) 452-0819
+                <a href="tel:+19735177899" className="hover:text-cyan-400 transition-colors whitespace-nowrap">
+                  +1-973-517-7899
                 </a>
               </div>
             </div>
@@ -130,10 +130,10 @@ const Footer = ({ isDarkMode, navigateToPage }) => {
             <div className={`${isDarkMode ? 'text-slate-500' : 'text-gray-500'} text-sm text-center md:text-left`}>
               © 2025 GoExalt System. All Rights Reserved.
             </div>
-            <a 
-              href="https://www.linkedin.com/company/exaltsystem" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.linkedin.com/company/exaltsystem"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`flex items-center gap-2 ${isDarkMode ? 'text-slate-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}
             >
               <Linkedin className="w-5 h-5" />

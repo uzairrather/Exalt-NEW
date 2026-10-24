@@ -5,6 +5,8 @@ const Partners = ({ isDarkMode }) => {
     { name: 'FutureScale', logo: '/images/KPK_LOGO.png'},
     { name: 'SmartOps', logo: '/images/hello-fresh.png' },
     { name: 'XETECHS', logo: '/images/xetechs_logo.png' },
+    { name: 'SeranaEurope', logo: '/images/image.jpg' },
+
   ];
 
   return (

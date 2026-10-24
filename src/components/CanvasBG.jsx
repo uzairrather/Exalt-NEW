@@ -11,7 +11,7 @@ const CanvasBG = ({ isDarkMode }) => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    ctx.fillStyle = isDarkMode ? 'rgb(15, 23, 42)' : 'rgb(255, 255, 255)';
+    ctx.fillStyle = isDarkMode ? 'rgb(15, 23, 42)' : 'rgb(243, 244, 246)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const particles = [];
@@ -77,7 +77,7 @@ const CanvasBG = ({ isDarkMode }) => {
           particle.draw();
         });
       } else {
-        ctx.fillStyle = 'rgb(255, 255, 255)';
+        ctx.fillStyle = 'rgb(243, 244, 246)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
         particles.forEach(particle => {
@@ -93,7 +93,7 @@ const CanvasBG = ({ isDarkMode }) => {
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      ctx.fillStyle = isDarkMode ? 'rgb(15, 23, 42)' : 'rgb(255, 255, 255)';
+      ctx.fillStyle = isDarkMode ? 'rgb(15, 23, 42)' : 'rgb(243, 244, 246)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
 
@@ -109,7 +109,7 @@ const CanvasBG = ({ isDarkMode }) => {
       <canvas 
         ref={canvasRef} 
         className="fixed inset-0 z-0" 
-        style={{ backgroundColor: isDarkMode ? 'rgb(15, 23, 42)' : 'rgb(255, 255, 255)' }}
+        style={{ backgroundColor: isDarkMode ? 'rgb(15, 23, 42)' : 'rgb(243, 244, 246)' }}
       />
       
       {!isDarkMode && (

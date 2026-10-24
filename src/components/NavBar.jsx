@@ -27,7 +27,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
           background: ${isDarkMode ? '#06b6d4' : '#0891b2'};
         }
       `}</style>
-      <nav className={`fixed top-0 left-0 right-0 w-full z-50 ${isDarkMode ? 'bg-slate-900/95 border-slate-700' : 'bg-white/95 border-gray-200'} backdrop-blur-lg border-b shadow-lg`}>
+      <nav className={`fixed top-0 left-0 right-0 w-full z-50 ${isDarkMode ? 'bg-slate-900/95 border-slate-700' : 'bg-gray-300/95 border-gray-200'} backdrop-blur-lg border-b shadow-lg`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center  group cursor-pointer" onClick={() => navigateToPage('home')}>
@@ -45,15 +45,15 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
           </div>
 
             <div className="hidden md:flex items-center space-x-8">
-              <button onClick={() => navigateToPage('home')} className={`${isDarkMode ? 'text-slate-300  hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Home</button>
-              <button onClick={() => navigateToPage('about')} className={`${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>About</button>
+              <button onClick={() => navigateToPage('home')} className={` text-lg font-semibold ${isDarkMode ? 'text-slate-300  hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>Home</button>
+              <button onClick={() => navigateToPage('about')} className={`text-lg font-semibold ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}>About</button>
               
               <div 
                 className="relative group"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
-                <button className={`${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors flex items-center gap-1`}>
+                <button className={`text-lg font-semibold ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors flex items-center gap-1`}>
                   Services
                   <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -132,7 +132,7 @@ const NavBar = ({ isDarkMode, setIsDarkMode, navigateToPage }) => {
         </div>
 
         {isMenuOpen && (
-          <div className={`md:hidden ${isDarkMode ? 'bg-slate-800/95' : 'bg-white/95'} backdrop-blur-lg`}>
+          <div className={`md:hidden ${isDarkMode ? 'bg-slate-800/95' : 'bg-gray-100/95'} backdrop-blur-lg`}>
             <div className="px-6 py-4 space-y-4">
               <button onClick={() => { navigateToPage('home'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'}`}>Home</button>
               <button onClick={() => { navigateToPage('about'); setIsMenuOpen(false); }} className={`block w-full text-left ${isDarkMode ? 'text-slate-300 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'}`}>About</button>
