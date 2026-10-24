@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Lenis from 'lenis';
 import CanvasBG from './components/CanvasBG';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
@@ -23,14 +24,48 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [fadeOut, setFadeOut] = useState(false);
   const [scrollToContact, setScrollToContact] = useState(false);
+  const lenisRef = useRef(null);
+
+  // Smooth scrolling (Lenis)
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.1,
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    lenisRef.current = lenis;
+
+    let rafId;
+    const raf = (time) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
+  const scrollToTopInstant = () => {
+    lenisRef.current?.scrollTo(0, { immediate: true });
+  };
+
+  const scrollToContactSection = () => {
+    const el = document.getElementById('contact');
+    if (el) lenisRef.current?.scrollTo(el, { offset: 0 });
+  };
 
   // Handle initial hash and hash changes (browser back/forward)
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.slice(1); // Remove '#' from hash
+      const hash = window.location.hash.slice(1);
       if (hash) {
         if (hash === 'contact') {
-          // For contact, we need to check current page at this moment
           const isOnHomePage = currentPage === 'home';
           if (!isOnHomePage) {
             setScrollToContact(true);
@@ -41,16 +76,15 @@ const App = () => {
             }, 400);
           } else {
             setTimeout(() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              scrollToContactSection();
             }, 200);
           }
         } else {
-          // Regular page navigation
           if (hash !== currentPage) {
             setFadeOut(true);
             setTimeout(() => {
               setCurrentPage(hash);
-              window.scrollTo({ top: 0, behavior: 'instant' });
+              scrollToTopInstant();
               setFadeOut(false);
             }, 400);
           }
@@ -60,41 +94,33 @@ const App = () => {
           setFadeOut(true);
           setTimeout(() => {
             setCurrentPage('home');
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            scrollToTopInstant();
             setFadeOut(false);
           }, 400);
         }
       }
     };
 
-    // Check hash on initial load
     handleHashChange();
-
-    // Listen for hash changes (back/forward browser buttons)
     window.addEventListener('hashchange', handleHashChange);
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
-  }, [currentPage]); // Add currentPage as dependency
+  }, [currentPage]);
 
   // Handle scroll to contact after page change
   useEffect(() => {
     if (scrollToContact && currentPage === 'home' && !fadeOut) {
       setTimeout(() => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        scrollToContactSection();
         setScrollToContact(false);
       }, 200);
     }
   }, [currentPage, scrollToContact, fadeOut]);
 
   const navigateToPage = (page) => {
-    // Update URL hash
     window.location.hash = page;
-    // The hashchange event will handle the actual navigation
   };
 
   return (
@@ -121,8 +147,7 @@ const App = () => {
           transform: translateY(-8px);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
-        
-        /* Smooth page transitions */
+
         .page-content {
           animation: fadeIn 400ms ease-out;
         }
@@ -130,7 +155,7 @@ const App = () => {
           animation: fadeOut 300ms ease-in;
           opacity: 0;
         }
-        
+
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -141,7 +166,7 @@ const App = () => {
             transform: translateY(0);
           }
         }
-        
+
         @keyframes fadeOut {
           from {
             opacity: 1;
@@ -152,13 +177,26 @@ const App = () => {
             transform: translateY(-10px);
           }
         }
+
+        html.lenis, html.lenis body {
+          height: auto;
+        }
+        .lenis.lenis-smooth {
+          scroll-behavior: auto !important;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+          overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+          overflow: hidden;
+        }
       `}</style>
-      
+
       <CanvasBG isDarkMode={isDarkMode} />
-      
-      <NavBar 
-        isDarkMode={isDarkMode} 
-        setIsDarkMode={setIsDarkMode} 
+
+      <NavBar
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
         navigateToPage={navigateToPage}
       />
 
